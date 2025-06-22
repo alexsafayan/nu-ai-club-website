@@ -13,9 +13,17 @@ import {
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import {
     EVENTS,
     PROJECTS,
-    TEAM_MEMBERS,
+    EXECUTIVE_TEAM,
+    GENERAL_MEMBERS,
     FAQ_ITEMS,
     EMAIL,
     SOCIAL_LINKS,
@@ -142,6 +150,7 @@ export default function Home() {
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
             >
+                <h3 className="mb-5 text-lg font-medium">About</h3>
                 <div className="flex-1">
                     <p className="text-zinc-600 dark:text-zinc-400">
                         Northwestern AI empowers students to explore, build, and lead in artificial intelligence. We foster innovation through hands-on projects and events. We welcome undergraduates from all backgrounds—technical or non-technical—who are curious about AI and ready to engage.
@@ -155,7 +164,7 @@ export default function Home() {
             >
                 <h3 className="mb-5 text-lg font-medium">Events</h3>
                 <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-                    We host events year-round that connect students with AI in the real world:
+                    We host events during the school year that connect students with AI in the real world:
                 </p>
                 <ul className="mb-5 list-disc pl-5 text-zinc-600 dark:text-zinc-400">
                     <li>Guest Speakers</li>
@@ -163,19 +172,35 @@ export default function Home() {
                     <li>Workshops</li>
                     <li>Hackathons</li>
                 </ul>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    {EVENTS.map((event) => (
-                        <div key={event.id} className="space-y-2">
-                            <div className="relative rounded-2xl bg-zinc-50/40 p-6 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                                <h4 className="font-medium text-black dark:text-white">{event.title}</h4>
-                                <p className="text-zinc-600 dark:text-zinc-400">{event.description}</p>
-                                {event.date && (
-                                    <p className="mt-2 text-sm text-zinc-500">{event.date}</p>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <Carousel
+                    opts={{
+                        align: "start",
+                    }}
+                    className="w-full"
+                >
+                    <CarouselContent className="-ml-2 md:-ml-4">
+                        {EVENTS.map((event) => (
+                            <CarouselItem key={event.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                                <div className="h-full">
+                                    <div
+                                        className={`relative flex h-full flex-col rounded-2xl bg-zinc-50/40 p-6 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50 ${event.id === 'event-coming-soon' ? 'opacity-50' : ''
+                                            }`}
+                                    >
+                                        <h4 className="font-medium text-black dark:text-white">{event.title}</h4>
+                                        <p className="text-zinc-600 dark:text-zinc-400">{event.description}</p>
+                                        {event.date && (
+                                            <p className="mt-auto pt-4 text-sm text-zinc-500">{event.date}</p>
+                                        )}
+                                    </div>
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <div className="flex justify-end gap-2 py-2">
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </div>
+                </Carousel>
             </motion.section>
 
             <motion.section
@@ -186,29 +211,20 @@ export default function Home() {
                 <p className="mb-5 text-zinc-600 dark:text-zinc-400">
                     Our student-led teams collaborate on applied AI/ML projects with faculty, startups, and companies.
                 </p>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    {PROJECTS.map((project) => (
-                        <div key={project.id} className="space-y-2">
-                            <div className="relative rounded-2xl bg-zinc-50/40 p-6 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                                <h4 className="font-medium text-black dark:text-white">{project.title}</h4>
-                                <p className="text-zinc-600 dark:text-zinc-400">{project.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-8 text-center">
-                    <p className="mb-4 text-zinc-600 dark:text-zinc-400">
-                        Faculty or industry? We'd love to collaborate. Our teams work independently or with your guidance, depending on scope.
-                    </p>
-                    <Magnetic>
-                        <Link
-                            href={`mailto:${EMAIL}?subject=Project Proposal`}
-                            className="rounded-full bg-black px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-                        >
-                            Submit a Proposal
-                        </Link>
-                    </Magnetic>
-                </div>
+                <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+                    Projects starting in Fall 2025.
+                </p>
+                <p className="mb-4 text-zinc-600 dark:text-zinc-400">
+                    Faculty or industry? We'd love to collaborate. Our teams work independently or with your guidance, depending on scope.
+                </p>
+                <Magnetic>
+                    <Link
+                        href={`mailto:${EMAIL}?subject=Project Proposal`}
+                        className="rounded-full bg-black px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+                    >
+                        Submit a Proposal
+                    </Link>
+                </Magnetic>
             </motion.section>
 
             <motion.section
@@ -229,7 +245,6 @@ export default function Home() {
                     </div>
                     <div className="space-y-4">
                         <h4 className="font-medium text-black dark:text-white">For Partners</h4>
-                        <p className="text-zinc-600 dark:text-zinc-400">We welcome:</p>
                         <ul className="list-disc pl-5 text-zinc-600 dark:text-zinc-400">
                             <li><strong>Speakers</strong> on AI topics</li>
                             <li><strong>Sponsors</strong> for events and competitions</li>
@@ -251,17 +266,29 @@ export default function Home() {
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
             >
-                <h3 className="mb-5 text-lg font-medium">Team</h3>
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    {TEAM_MEMBERS.map((member) => (
-                        <div
-                            key={member.id}
-                            className="rounded-xl bg-zinc-50 p-4 text-center dark:bg-zinc-900"
-                        >
-                            <h4 className="font-medium text-black dark:text-white">{member.name}</h4>
-                            <p className="text-sm text-zinc-600 dark:text-zinc-400">{member.role}</p>
-                        </div>
-                    ))}
+                <h3 className="mb-5 text-lg font-medium">Roster</h3>
+                <div className="space-y-8">
+                    <h4 className="mb-4 font-medium text-black dark:text-white">Executive Team</h4>
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                        {EXECUTIVE_TEAM.map((member) => (
+                            <div
+                                key={member.id}
+                                className="rounded-xl bg-zinc-50 p-4 text-center dark:bg-zinc-900"
+                            >
+                                <h4 className="font-medium text-black dark:text-white">{member.name}</h4>
+                                <p className="text-sm text-zinc-600 dark:text-zinc-400">{member.role}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <h4 className="mb-4 font-medium text-black dark:text-white">General Members</h4>
+                    <p className="text-zinc-600 dark:text-zinc-400">
+                        {GENERAL_MEMBERS.map((member, index) => (
+                            <span key={member.id}>
+                                {member.name}
+                                {index < GENERAL_MEMBERS.length - 1 ? ', ' : ''}
+                            </span>
+                        ))}
+                    </p>
                 </div>
             </motion.section>
 

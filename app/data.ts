@@ -17,6 +17,11 @@ type TeamMember = {
     id: string
 }
 
+type GeneralMember = {
+    name: string
+    id: string
+}
+
 type FAQItem = {
     question: string
     answer: string
@@ -30,9 +35,34 @@ type SocialLink = {
 
 export const EVENTS: Event[] = [
     {
-        title: 'New Events Coming Soon',
-        description: 'Stay tuned for our upcoming events!',
+        title: 'More Events Soon',
+        description: '',
+        date: 'Spring 2024',
         id: 'event-coming-soon'
+    },
+    {
+        title: 'AI in Healthcare Symposium',
+        description: 'Expert talks on AI applications in medicine.',
+        date: 'February 15, 2024',
+        id: 'event-healthcare'
+    },
+    {
+        title: 'LLM Workshop Series',
+        description: 'Hands-on training with large language models.',
+        date: 'January 20, 2024',
+        id: 'event-llm'
+    },
+    {
+        title: 'AI Ethics Panel Discussion',
+        description: 'Industry experts debate AI ethics and safety.',
+        date: 'November 10, 2023',
+        id: 'event-ethics'
+    },
+    {
+        title: 'AI Startup Showcase',
+        description: 'Local startups present AI innovations.',
+        date: 'October 5, 2023',
+        id: 'event-startup'
     }
 ]
 
@@ -54,16 +84,11 @@ export const PROJECTS: Project[] = [
     }
 ]
 
-export const TEAM_MEMBERS: TeamMember[] = [
+export const EXECUTIVE_TEAM: TeamMember[] = [
     {
         name: 'Jonah Berman',
         role: 'President',
         id: 'member1'
-    },
-    {
-        name: 'Nate Berman',
-        role: 'VP of Finance',
-        id: 'member2'
     },
     {
         name: 'Leo Necheles',
@@ -71,9 +96,19 @@ export const TEAM_MEMBERS: TeamMember[] = [
         id: 'member3'
     },
     {
-        name: 'Varoon Enjeti',
-        role: 'VP of Washed Up Senior',
-        id: 'member4'
+        name: 'Alex Safayan',
+        role: 'VP of Outreach',
+        id: 'member8'
+    },
+    {
+        name: 'Shraeya Iyer',
+        role: 'VP of Tech',
+        id: 'member9'
+    },
+    {
+        name: 'Nate Berman',
+        role: 'VP of Finance',
+        id: 'member2'
     },
     {
         name: 'Sophie Shin',
@@ -90,16 +125,29 @@ export const TEAM_MEMBERS: TeamMember[] = [
         role: 'TPM',
         id: 'member7'
     },
-    {
-        name: 'Alex Safayan',
-        role: 'VP of Outreach',
-        id: 'member8'
-    },
-    {
-        name: 'Shraeya Iyer',
-        role: 'VP of Tech',
-        id: 'member9'
-    }
+]
+
+export const GENERAL_MEMBERS: GeneralMember[] = [
+    { name: 'Emma Thompson', id: 'gm1' },
+    { name: 'Michael Chen', id: 'gm2' },
+    { name: 'Sarah Rodriguez', id: 'gm3' },
+    { name: 'David Kim', id: 'gm4' },
+    { name: 'Julia Patel', id: 'gm5' },
+    { name: 'Marcus Johnson', id: 'gm6' },
+    { name: 'Sophia Lee', id: 'gm7' },
+    { name: 'Ryan O\'Connor', id: 'gm8' },
+    { name: 'Ava Gupta', id: 'gm9' },
+    { name: 'Noah Williams', id: 'gm10' },
+    { name: 'Isabella Martinez', id: 'gm11' },
+    { name: 'Ethan Park', id: 'gm12' },
+    { name: 'Olivia Wilson', id: 'gm13' },
+    { name: 'Lucas Brown', id: 'gm14' },
+    { name: 'Mia Anderson', id: 'gm15' },
+    { name: 'Alexander Liu', id: 'gm16' },
+    { name: 'Grace Taylor', id: 'gm17' },
+    { name: 'Daniel Garcia', id: 'gm18' },
+    { name: 'Victoria Chang', id: 'gm19' },
+    { name: 'Benjamin Moore', id: 'gm20' }
 ]
 
 export const FAQ_ITEMS: FAQItem[] = [
