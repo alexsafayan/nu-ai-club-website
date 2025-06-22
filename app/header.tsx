@@ -1,7 +1,7 @@
 'use client'
 import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
-import { Magnetic } from '@/components/ui/magnetic'
+import { MagneticButton } from '@/components/ui/magnetic-button'
 
 export function Header() {
     return (
@@ -20,14 +20,11 @@ export function Header() {
                     Hands-On AI for Every Wildcat
                 </TextEffect>
             </div>
-            <Magnetic>
-                <Link
-                    href="#join"
-                    className="rounded-full bg-black px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-                >
+            <MagneticButton asChild>
+                <Link href="#join">
                     Join the Club
                 </Link>
-            </Magnetic>
+            </MagneticButton>
         </header>
     )
 }

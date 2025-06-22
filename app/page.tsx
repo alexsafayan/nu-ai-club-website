@@ -2,7 +2,7 @@
 import { motion } from 'motion/react'
 import { XIcon, ChevronUp } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
-import { Magnetic } from '@/components/ui/magnetic'
+import { MagneticButton } from '@/components/ui/magnetic-button'
 import {
     MorphingDialog,
     MorphingDialogTrigger,
@@ -112,10 +112,10 @@ function MagneticSocialLink({
     link: string
 }) {
     return (
-        <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
+        <MagneticButton asChild>
             <a
                 href={link}
-                className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+                className="group relative inline-flex shrink-0 items-center gap-[1px]"
             >
                 {children}
                 <svg
@@ -134,7 +134,7 @@ function MagneticSocialLink({
                     ></path>
                 </svg>
             </a>
-        </Magnetic>
+        </MagneticButton>
     )
 }
 
@@ -217,14 +217,13 @@ export default function Home() {
                 <p className="mb-4 text-zinc-600 dark:text-zinc-400">
                     Faculty or industry? We'd love to collaborate. Our teams work independently or with your guidance, depending on scope.
                 </p>
-                <Magnetic>
-                    <Link
-                        href={`mailto:${EMAIL}?subject=Project Proposal`}
-                        className="rounded-full bg-black px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-                    >
-                        Submit a Proposal
-                    </Link>
-                </Magnetic>
+                <motion.div>
+                    <MagneticButton asChild>
+                        <Link href={`mailto:${EMAIL}?subject=Project Proposal`}>
+                            Submit a Proposal
+                        </Link>
+                    </MagneticButton>
+                </motion.div>
             </motion.section>
 
             <motion.section
@@ -250,14 +249,13 @@ export default function Home() {
                             <li><strong>Sponsors</strong> for events and competitions</li>
                             <li><strong>Collaborators</strong> for research or product development projects</li>
                         </ul>
-                        <Magnetic>
-                            <Link
-                                href={`mailto:${EMAIL}?subject=Partnership Inquiry`}
-                                className="inline-block rounded-full bg-black px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-                            >
-                                Partner With Us
-                            </Link>
-                        </Magnetic>
+                        <motion.div>
+                            <MagneticButton asChild>
+                                <Link href={`mailto:${EMAIL}?subject=Partnership Inquiry`}>
+                                    Partner With Us
+                                </Link>
+                            </MagneticButton>
+                        </motion.div>
                     </div>
                 </div>
             </motion.section>
