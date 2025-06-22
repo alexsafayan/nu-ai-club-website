@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
+import { XIcon, ChevronUp } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import {
@@ -20,6 +20,12 @@ import {
     EMAIL,
     SOCIAL_LINKS,
 } from './data'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionTrigger,
+    AccordionContent,
+} from '@/components/motion-primitives/accordion'
 
 const VARIANTS_CONTAINER = {
     hidden: { opacity: 0 },
@@ -264,28 +270,30 @@ export default function Home() {
                 transition={TRANSITION_SECTION}
             >
                 <h3 className="mb-5 text-lg font-medium">FAQ</h3>
-                <AnimatedBackground
-                    enableHover
-                    className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
-                    transition={{
-                        type: 'spring',
-                        bounce: 0,
-                        duration: 0.2,
-                    }}
+                <Accordion
+                    className="flex w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700"
+                    transition={{ duration: 0.2, ease: 'easeInOut' }}
                 >
                     {FAQ_ITEMS.map((item) => (
-                        <div
+                        <AccordionItem
                             key={item.id}
-                            className="-mx-3 rounded-xl px-3 py-3"
-                            data-id={item.id}
+                            value={item.id}
+                            className="py-2"
                         >
-                            <div className="flex flex-col space-y-1">
-                                <h4 className="font-medium dark:text-zinc-100">{item.question}</h4>
-                                <p className="text-zinc-500 dark:text-zinc-400">{item.answer}</p>
-                            </div>
-                        </div>
+                            <AccordionTrigger className="w-full text-left text-zinc-950 dark:text-zinc-50">
+                                <div className="flex items-center justify-between">
+                                    <div>{item.question}</div>
+                                    <ChevronUp className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-50" />
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <p className="text-zinc-500 dark:text-zinc-400">
+                                    {item.answer}
+                                </p>
+                            </AccordionContent>
+                        </AccordionItem>
                     ))}
-                </AnimatedBackground>
+                </Accordion>
             </motion.section>
 
             <motion.section
