@@ -56,24 +56,49 @@ export const PROJECTS: Project[] = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
     {
-        name: 'Jonah Bernman',
+        name: 'Jonah Berman',
         role: 'President',
         id: 'member1'
     },
     {
-        name: 'Alex Safayan',
-        role: 'Executive Member',
+        name: 'Nate Berman',
+        role: 'VP of Finance',
         id: 'member2'
     },
     {
-        name: 'James Carlin',
-        role: 'Executive Member',
+        name: 'Leo Necheles',
+        role: 'VP of Ops',
         id: 'member3'
     },
     {
-        name: 'Jonah Berman',
-        role: 'Executive Member',
+        name: 'Varoon Enjeti',
+        role: 'VP of Washed Up Senior',
         id: 'member4'
+    },
+    {
+        name: 'Sophie Shin',
+        role: 'TPM',
+        id: 'member5'
+    },
+    {
+        name: 'Maanvi Sarwadi',
+        role: 'TPM',
+        id: 'member6'
+    },
+    {
+        name: 'Raymond Gu',
+        role: 'TPM',
+        id: 'member7'
+    },
+    {
+        name: 'Alex Safayan',
+        role: 'VP of Outreach',
+        id: 'member8'
+    },
+    {
+        name: 'Shraeya Iyer',
+        role: 'VP of Tech',
+        id: 'member9'
     }
 ]
 
