@@ -7,7 +7,7 @@ export function Header() {
     return (
         <header className="mb-8 flex items-center justify-between">
             <div>
-                <Link href="/" className="font-medium text-black dark:text-white">
+                <Link href="/" className="font-medium text-primary">
                     Northwestern AI Club
                 </Link>
                 <TextEffect
@@ -21,8 +21,11 @@ export function Header() {
                 </TextEffect>
             </div>
             <MagneticButton asChild>
-                <Link href="#join">
-                    Join the Club
+                <Link href="#get-involved" scroll={false} onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#get-involved')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
+                    Get Involved
                 </Link>
             </MagneticButton>
         </header>

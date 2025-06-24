@@ -107,12 +107,13 @@ function ProjectVideo({ src }: ProjectVideoProps) {
 function MagneticSocialLink({
     children,
     link,
+    ...props
 }: {
     children: React.ReactNode
     link: string
-}) {
+} & React.ComponentProps<typeof MagneticButton>) {
     return (
-        <MagneticButton asChild>
+        <MagneticButton {...props}>
             <a
                 href={link}
                 className="group relative inline-flex shrink-0 items-center gap-[1px]"
@@ -203,19 +204,19 @@ export default function Home() {
                 <p className="mb-4 text-zinc-600 dark:text-zinc-400">
                     Faculty or industry? We'd love to collaborate. Our teams work independently or with your guidance, depending on scope.
                 </p>
-                <motion.div>
+                <div className="flex">
                     <MagneticButton asChild>
                         <Link href={`mailto:${EMAIL}?subject=Project Proposal`}>
                             Submit a Proposal
                         </Link>
                     </MagneticButton>
-                </motion.div>
+                </div>
             </motion.section>
 
             <motion.section
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
-                id="join"
+                id="get-involved"
             >
                 <h3 className="mb-5 text-lg font-medium">Get Involved</h3>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -224,9 +225,13 @@ export default function Home() {
                         <ul className="list-disc pl-5 text-zinc-600 dark:text-zinc-400">
                             <li>Open to all Northwestern undergraduates</li>
                             <li>No prior AI experience required</li>
-                            <li>Info sessions each quarter</li>
-                            <li>Apply or drop in at meetings</li>
+                            <li>Applications open each quarter</li>
                         </ul>
+                        <div className="flex">
+                            <MagneticButton disabled>
+                                Apply
+                            </MagneticButton>
+                        </div>
                     </div>
                     <div className="space-y-4">
                         <h4 className="font-medium text-black dark:text-white">For Partners</h4>
@@ -235,13 +240,13 @@ export default function Home() {
                             <li><strong>Sponsors</strong> for events and competitions</li>
                             <li><strong>Collaborators</strong> for research or product development projects</li>
                         </ul>
-                        <motion.div>
+                        <div className="flex">
                             <MagneticButton asChild>
                                 <Link href={`mailto:${EMAIL}?subject=Partnership Inquiry`}>
                                     Partner With Us
                                 </Link>
                             </MagneticButton>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </motion.section>
@@ -320,7 +325,7 @@ export default function Home() {
                 </p>
                 <div className="flex items-center justify-start space-x-3">
                     {SOCIAL_LINKS.map((link) => (
-                        <MagneticSocialLink key={link.label} link={link.link}>
+                        <MagneticSocialLink key={link.label} link={link.link} disabled>
                             {link.label}
                         </MagneticSocialLink>
                     ))}
