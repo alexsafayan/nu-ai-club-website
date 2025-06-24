@@ -37,7 +37,7 @@ export const EVENTS: Event[] = [
     {
         title: 'More Events Soon',
         description: '',
-        date: 'Spring 2024',
+        date: 'Fall 2025',
         id: 'event-coming-soon'
     },
     {
