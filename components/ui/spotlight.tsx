@@ -28,7 +28,7 @@ export function Spotlight({
     if (containerRef.current) {
       const parent = containerRef.current.parentElement
       if (parent) {
-        parent.style.position = 'relative'
+      parent.style.position = 'relative'
         parent.style.overflow = 'hidden'
         setParentElement(parent)
       }
@@ -63,8 +63,8 @@ export function Spotlight({
     <motion.div
       ref={containerRef}
       className={cn(
-        'pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200',
-        'from-zinc-50 via-zinc-100 to-zinc-200',
+        // no blur: use radial-gradient instead (Safari-friendly)
+        'pointer-events-none absolute rounded-full transition-opacity',
         isHovered ? 'opacity-100' : 'opacity-0',
         className,
       )}
@@ -73,6 +73,9 @@ export function Spotlight({
         height: size,
         left: spotlightLeft,
         top: spotlightTop,
+        background:
+          'radial-gradient(closest-side, rgba(255, 255, 255, 0.4), rgb(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0) 72%)',
+        mixBlendMode: 'soft-light',
       }}
     />
   )

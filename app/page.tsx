@@ -138,10 +138,8 @@ export default function Home() {
                 transition={TRANSITION_SECTION}
                 className="relative"
             >
-                <Spotlight
-                    className="absolute -top-40 left-0 md:-top-20 md:left-60"
-                />
                 <div className="relative rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-xl ring-1 ring-blue-200/50 dark:from-blue-950/30 dark:to-indigo-950/30 dark:ring-blue-800/30">
+                <Spotlight/>
                     <div className="text-center">
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
