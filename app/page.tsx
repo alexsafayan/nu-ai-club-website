@@ -140,7 +140,6 @@ export default function Home() {
             >
                 <Spotlight
                     className="absolute -top-40 left-0 md:-top-20 md:left-60"
-                    fill="rgba(59, 130, 246, 0.15)"
                 />
                 <div className="relative rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-xl ring-1 ring-blue-200/50 dark:from-blue-950/30 dark:to-indigo-950/30 dark:ring-blue-800/30">
                     <div className="text-center">
