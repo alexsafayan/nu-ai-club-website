@@ -136,12 +136,80 @@ export default function Home() {
             <motion.section
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
+                className="relative"
+            >
+                <Spotlight
+                    className="absolute -top-40 left-0 md:-top-20 md:left-60"
+                    fill="rgba(59, 130, 246, 0.15)"
+                />
+                <div className="relative rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-xl ring-1 ring-blue-200/50 dark:from-blue-950/30 dark:to-indigo-950/30 dark:ring-blue-800/30">
+                    <div className="text-center">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
+                        >
+                            Applications are now open for our flagship opportunity, the{' '}
+                            <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
+                                AI Innovation Lab Fellowship
+                            </span>
+                        </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                        >
+                            A selective one-year program providing unparalleled hands-on experience in cutting-edge AI research and industry partnerships.
+                            Projects are open to both technical and non-technical applicants, spanning AI/ML development to political and economic applications.
+                            Fellows gain direct project experience highly valued by employers and academia, collaborate with industry leaders
+                            and professors, and receive resume book inclusion.
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="space-y-4"
+                        >
+                            <a
+                                href="https://docs.google.com/forms/d/10ltsa2aEDQPRwWGUOb4TFOYxsw1SoJOI0zwMjLIYPww/edit"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center rounded-lg bg-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-purple-700"
+                            >
+                                Apply Now
+                            </a>
+
+                            <p className="text-sm font-medium text-red-600 dark:text-red-400">
+                                <em>Fall cohort applications due September 25th</em>
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section
+                variants={VARIANTS_SECTION}
+                transition={TRANSITION_SECTION}
             >
                 <h3 className="mb-5 text-lg font-medium">About</h3>
                 <div className="flex-1">
-                    <p className="text-zinc-600 dark:text-zinc-400">
-                        Northwestern AI empowers students to explore, build, and lead in artificial intelligence. We foster innovation through hands-on projects and events. We welcome undergraduates from all backgrounds—technical or non-technical—who are curious about AI and ready to engage.
+                    <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+                        As the premier AI organization at Northwestern, Northwestern AI empowers students to explore, build, and lead in artificial intelligence. We welcome undergraduates from all backgrounds—technical or non-technical—who are curious about AI and ready to engage. The Northwestern AI club is a barrier-free organization. This means that all undergraduates are welcome to join our general membership.
                     </p>
+                    <div className="flex">
+                        <a
+                            href="https://docs.google.com/forms/d/1BadFZ2vvcP_v8HAyr4KDqdJkgrFETc6Hu2fJQgOSiEc/edit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center rounded-lg bg-purple-600 px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-purple-700"
+                        >
+                            Join Now
+                        </a>
+                    </div>
                 </div>
             </motion.section>
 
@@ -194,21 +262,18 @@ export default function Home() {
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
             >
-                <h3 className="mb-5 text-lg font-medium">Projects</h3>
+                <h3 className="mb-5 text-lg font-medium">Collaboration Opportunities</h3>
                 <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-                    Our student-led teams collaborate on applied AI/ML projects with faculty, startups, and companies.
-                </p>
-                <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-                    Projects starting in Fall 2025.
+                    The Northwestern AI Club is a vast community of exceptional students. Our student-led teams collaborate on applied AI/ML opportunities with faculty, startups, and companies.
                 </p>
                 <p className="mb-4 text-zinc-600 dark:text-zinc-400">
                     Faculty or industry? We'd love to collaborate. Our teams work independently or with your guidance, depending on scope.
                 </p>
                 <div className="flex">
                     <MagneticButton asChild>
-                        <Link href={`mailto:${EMAIL}?subject=Project Proposal`}>
+                        <a href="mailto:northwesternaiclub@gmail.com?subject=Collaboration Proposal">
                             Submit a Proposal
-                        </Link>
+                        </a>
                     </MagneticButton>
                 </div>
             </motion.section>
@@ -228,8 +293,14 @@ export default function Home() {
                             <li>Applications open each quarter</li>
                         </ul>
                         <div className="flex">
-                            <MagneticButton disabled>
-                                Apply
+                            <MagneticButton asChild>
+                                <a
+                                    href="https://docs.google.com/forms/d/1BadFZ2vvcP_v8HAyr4KDqdJkgrFETc6Hu2fJQgOSiEc/edit"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Join Now
+                                </a>
                             </MagneticButton>
                         </div>
                     </div>
@@ -242,9 +313,9 @@ export default function Home() {
                         </ul>
                         <div className="flex">
                             <MagneticButton asChild>
-                                <Link href={`mailto:${EMAIL}?subject=Partnership Inquiry`}>
+                                <a href="mailto:northwesternaiclub@gmail.com?subject=Partnership Inquiry">
                                     Partner With Us
-                                </Link>
+                                </a>
                             </MagneticButton>
                         </div>
                     </div>
@@ -271,12 +342,7 @@ export default function Home() {
                     </div>
                     <h4 className="mb-4 font-medium text-black dark:text-white">General Members</h4>
                     <p className="text-zinc-600 dark:text-zinc-400">
-                        {GENERAL_MEMBERS.map((member, index) => (
-                            <span key={member.id}>
-                                {member.name}
-                                {index < GENERAL_MEMBERS.length - 1 ? ', ' : ''}
-                            </span>
-                        ))}
+                        Join our growing community in our GroupMe of over 175 members
                     </p>
                 </div>
             </motion.section>
@@ -310,6 +376,16 @@ export default function Home() {
                         </AccordionItem>
                     ))}
                 </Accordion>
+            </motion.section>
+
+            <motion.section
+                variants={VARIANTS_SECTION}
+                transition={TRANSITION_SECTION}
+            >
+                <h3 className="mb-5 text-lg font-medium">Alumni Network</h3>
+                <p className="text-zinc-600 dark:text-zinc-400">
+                    Our alumni network is vast and our members go on to become visionaries in the world of AI.
+                </p>
             </motion.section>
 
             <motion.section

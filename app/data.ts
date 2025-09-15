@@ -87,8 +87,13 @@ export const PROJECTS: Project[] = [
 export const EXECUTIVE_TEAM: TeamMember[] = [
     {
         name: 'Jonah Berman',
-        role: 'President',
+        role: 'Co-President',
         id: 'member1'
+    },
+    {
+        name: 'Helen Wang',
+        role: 'Co-President',
+        id: 'member10'
     },
     {
         name: 'Leo Necheles',
@@ -163,7 +168,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     },
     {
         question: 'What\'s the time commitment?',
-        answer: 'For members, attendance is required at weekly club meetings and events. Participation in projects is not required.',
+        answer: 'There is no time commitment for general members! We hope that you choose to engage in our opportunities and attend our events, but as a barrier-free org, nothing is mandatory. For fellows, a time commitment of about 2 hours per week can be expected.',
         id: 'faq3'
     },
     {
@@ -176,15 +181,7 @@ export const FAQ_ITEMS: FAQItem[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
     {
         label: 'LinkedIn',
-        link: '#'
-    },
-    {
-        label: 'Instagram',
-        link: '#'
-    },
-    {
-        label: 'X/Twitter',
-        link: '#'
+        link: 'https://www.linkedin.com/groups/12886477/'
     }
 ]
 

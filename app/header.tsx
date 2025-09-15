@@ -17,7 +17,7 @@ export function Header() {
                     className="text-zinc-600 dark:text-zinc-500"
                     delay={0.5}
                 >
-                    Hands-On AI for Every Wildcat
+                    AI starts here.
                 </TextEffect>
             </div>
             <MagneticButton asChild>
