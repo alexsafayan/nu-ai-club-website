@@ -174,7 +174,7 @@ export default function Home() {
                             className="space-y-4"
                         >
                             <a
-                                href="https://docs.google.com/forms/d/10ltsa2aEDQPRwWGUOb4TFOYxsw1SoJOI0zwMjLIYPww/edit"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLScTtuPiGqG7Z1Uc5o1mZVqEX7Zq_x-tTljKIT0SDTE-MAEKAw/viewform?usp=sharing&ouid=113293324627676648343"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center rounded-lg bg-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-purple-700"
