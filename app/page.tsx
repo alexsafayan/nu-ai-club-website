@@ -140,7 +140,7 @@ export default function Home() {
             >
                 <div className="relative rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-xl ring-1 ring-blue-200/50 dark:from-blue-950/30 dark:to-indigo-950/30 dark:ring-blue-800/30">
                 <Spotlight/>
-                    <div className="text-center">
+                    <div className="">
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -171,14 +171,15 @@ export default function Home() {
                             transition={{ delay: 0.4 }}
                             className="space-y-4"
                         >
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLScTtuPiGqG7Z1Uc5o1mZVqEX7Zq_x-tTljKIT0SDTE-MAEKAw/viewform?usp=sharing&ouid=113293324627676648343"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center rounded-lg bg-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-purple-700"
-                            >
-                                Apply Now
-                            </a>
+                            <MagneticButton asChild size="lg">
+                                <a
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLScTtuPiGqG7Z1Uc5o1mZVqEX7Zq_x-tTljKIT0SDTE-MAEKAw/viewform?usp=sharing&ouid=113293324627676648343"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Apply Now
+                                </a>
+                            </MagneticButton>
 
                             <p className="text-sm font-medium text-red-600 dark:text-red-400">
                                 <em>Fall cohort applications due September 25th</em>
@@ -197,16 +198,15 @@ export default function Home() {
                     <p className="mb-5 text-zinc-600 dark:text-zinc-400">
                         As the premier AI organization at Northwestern, Northwestern AI empowers students to explore, build, and lead in artificial intelligence. We welcome undergraduates from all backgrounds—technical or non-technical—who are curious about AI and ready to engage. The Northwestern AI club is a barrier-free organization. This means that all undergraduates are welcome to join our general membership.
                     </p>
-                    <div className="flex">
+                    <MagneticButton asChild>
                         <a
-                            href="https://docs.google.com/forms/d/1BadFZ2vvcP_v8HAyr4KDqdJkgrFETc6Hu2fJQgOSiEc/edit"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSeo3i0SPp0g1f4R6-QM7Bb6Tjc6GVQLspG1MzUXIn3fx0s4Kw/viewform?usp=sharing&ouid=113293324627676648343"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center rounded-lg bg-purple-600 px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-purple-700"
                         >
                             Join Now
                         </a>
-                    </div>
+                    </MagneticButton>
                 </div>
             </motion.section>
 
@@ -292,7 +292,7 @@ export default function Home() {
                         <div className="flex">
                             <MagneticButton asChild>
                                 <a
-                                    href="https://docs.google.com/forms/d/1BadFZ2vvcP_v8HAyr4KDqdJkgrFETc6Hu2fJQgOSiEc/edit"
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSeo3i0SPp0g1f4R6-QM7Bb6Tjc6GVQLspG1MzUXIn3fx0s4Kw/viewform?usp=sharing&ouid=113293324627676648343"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

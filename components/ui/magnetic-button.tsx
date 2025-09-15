@@ -10,6 +10,7 @@ interface MagneticButtonProps extends React.ComponentProps<typeof Button> {
     intensity?: number
     range?: number
     springOptions?: any
+    actionArea?: 'self' | 'parent' | 'global'
 }
 
 export function MagneticButton({
@@ -18,6 +19,7 @@ export function MagneticButton({
     intensity = 0.3,
     range = 100,
     springOptions = { bounce: 0 },
+    actionArea = 'self',
     ...props
 }: MagneticButtonProps) {
     return (
@@ -25,6 +27,7 @@ export function MagneticButton({
             intensity={intensity}
             range={range}
             springOptions={springOptions}
+            actionArea={actionArea}
         >
             <Button
                 variant="magnetic"

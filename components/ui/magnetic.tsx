@@ -16,6 +16,7 @@ export type MagneticProps = {
     range?: number
     actionArea?: 'self' | 'parent' | 'global'
     springOptions?: SpringOptions
+    className?: string
 }
 
 export function Magnetic({
@@ -24,6 +25,7 @@ export function Magnetic({
     range = 100,
     actionArea = 'self',
     springOptions = SPRING_CONFIG,
+    className,
 }: MagneticProps) {
     const [isHovered, setIsHovered] = useState(false)
     const ref = useRef<HTMLDivElement>(null)
@@ -36,6 +38,7 @@ export function Magnetic({
 
     useEffect(() => {
         const calculateDistance = (e: MouseEvent) => {
+            console.log(e)
             if (ref.current) {
                 const rect = ref.current.getBoundingClientRect()
                 const centerX = rect.left + rect.width / 2
@@ -105,6 +108,7 @@ export function Magnetic({
                 x: springX,
                 y: springY,
             }}
+            className={['inline-block', className].filter(Boolean).join(' ')}
         >
             {children}
         </motion.div>
