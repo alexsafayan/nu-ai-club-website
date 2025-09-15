@@ -397,7 +397,7 @@ export default function Home() {
                 </p>
                 <div className="flex items-center justify-start space-x-3">
                     {SOCIAL_LINKS.map((link) => (
-                        <MagneticSocialLink key={link.label} link={link.link} disabled>
+                        <MagneticSocialLink key={link.label} link={link.link}>
                             {link.label}
                         </MagneticSocialLink>
                     ))}
