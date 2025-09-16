@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon, ChevronUp, ArrowUpRight } from 'lucide-react'
+import { XIcon, ChevronUp, ArrowUpRight, Calendar } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { MagneticButton } from '@/components/ui/magnetic-button'
 import {
@@ -137,6 +137,50 @@ export default function Home() {
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
                 className="relative"
+            >
+                <div className="relative rounded-3xl bg-gradient-to-br from-orange-50 to-amber-100 p-6 shadow-xl ring-1 ring-orange-200/50 dark:from-orange-950/30 dark:to-amber-950/30 dark:ring-orange-800/30">
+                    <div className="space-y-4">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
+                        >
+                            Info Session
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg text-gray-700 dark:text-gray-300"
+                        >
+                            <strong>Friday, September 19th at 7:30 PM</strong><br />
+                            NU Tech Institute LR4
+                        </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <MagneticButton asChild size="sm">
+                                <a
+                                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Northwestern+AI+Club+Info+Session&details=Join+us+for+an+information+session+about+the+Northwestern+AI+Club+and+our+flagship+AI+Innovation+Lab+Fellowship+program.+Learn+about+opportunities+for+both+technical+and+non-technical+students.&location=NU+Tech+Institute+LR4&dates=20250919T193000/20250919T203000&ctz=America%2FChicago"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Calendar className="h-4 w-4 mr-2" />
+                                    Add to Google Calendar
+                                </a>
+                            </MagneticButton>
+                        </motion.div>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section
+                variants={VARIANTS_SECTION}
+                transition={TRANSITION_SECTION}
+                className="relative -mt-16"
             >
                 <div className="relative rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-xl ring-1 ring-blue-200/50 dark:from-blue-950/30 dark:to-indigo-950/30 dark:ring-blue-800/30">
                     <div className="">
