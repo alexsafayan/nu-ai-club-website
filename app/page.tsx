@@ -154,8 +154,8 @@ export default function Home() {
                             transition={{ delay: 0.2 }}
                             className="text-lg text-gray-700 dark:text-gray-300"
                         >
-                            <strong>Friday, September 19th at 7:30 PM</strong><br />
-                            NU Tech Institute LR4
+                            <strong>Monday, September 22nd at 6:30 PM</strong><br />
+                            NU Tech Institute M177
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ export default function Home() {
                         >
                             <MagneticButton asChild size="sm">
                                 <a
-                                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Northwestern+AI+Club+Info+Session&details=Join+us+for+an+information+session+about+the+Northwestern+AI+Club+and+our+flagship+AI+Innovation+Lab+Fellowship+program.+Learn+about+opportunities+for+both+technical+and+non-technical+students.&location=NU+Tech+Institute+LR4&dates=20250919T193000/20250919T203000&ctz=America%2FChicago"
+                                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Northwestern+AI+Club+Info+Session&details=Join+us+for+an+information+session+about+the+Northwestern+AI+Club+and+our+flagship+AI+Innovation+Lab+Fellowship+program.+Learn+about+opportunities+for+both+technical+and+non-technical+students.&location=NU+Tech+Institute+M177&dates=20250922T183000/20250922T193000&ctz=America%2FChicago"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -202,7 +202,7 @@ export default function Home() {
                             transition={{ delay: 0.3 }}
                             className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
                         >
-                            A selective one-year program providing unparalleled hands-on experience in cutting-edge AI research and industry partnerships.
+                            A selective one-year program providing unparalleled hands-on experience in cutting-edge AI.
                             Projects are open to both technical and non-technical applicants, spanning AI/ML development to political and economic applications.
                             Fellows gain direct project experience highly valued by employers and academia, collaborate with industry leaders
                             and professors, and receive resume book inclusion.
