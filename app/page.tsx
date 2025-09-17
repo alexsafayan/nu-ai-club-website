@@ -239,7 +239,7 @@ export default function Home() {
                 <h3 className="mb-5 text-lg font-medium">About</h3>
                 <div className="flex-1">
                     <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-                        As the premier AI organization at Northwestern, Northwestern AI empowers students to explore, build, and lead in artificial intelligence. We welcome undergraduates from all backgrounds—technical or non-technical—who are curious about AI and ready to engage. The Northwestern AI club is a barrier-free organization. This means that all undergraduates are welcome to join our general membership.
+                        As the premier AI organization at Northwestern, Northwestern AI empowers students to explore, build, and lead in artificial intelligence. We welcome undergraduates from all backgrounds—technical or non-technical—who are curious about AI and ready to engage. <strong>The Northwestern AI club is a barrier-free organization. This means that all undergraduates are welcome to join our general membership.</strong>
                     </p>
                     <MagneticButton asChild>
                         <a
@@ -330,7 +330,7 @@ export default function Home() {
                         <ul className="list-disc pl-5 text-zinc-600 dark:text-zinc-400">
                             <li>Open to all Northwestern undergraduates</li>
                             <li>No prior AI experience required</li>
-                            <li>Applications open each quarter</li>
+                            <li>All students are free to join, barrier-free</li>
                         </ul>
                         <div className="flex">
                             <MagneticButton asChild>
