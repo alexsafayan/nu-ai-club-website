@@ -162,14 +162,56 @@ export default function Home() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <MagneticButton asChild size="sm">
+                            <MagneticButton asChild>
                                 <a
                                     href="https://www.google.com/calendar/render?action=TEMPLATE&text=Northwestern+AI+Club+Info+Session&details=Join+us+for+an+information+session+about+the+Northwestern+AI+Club+and+our+flagship+AI+Innovation+Lab+Fellowship+program.+Learn+about+opportunities+for+both+technical+and+non-technical+students.&location=NU+Tech+Institute+M177&dates=20250922T183000/20250922T193000&ctz=America%2FChicago"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <Calendar className="h-4 w-4 mr-2" />
+                                    <Calendar className="h-4 w-4" />
                                     Add to Google Calendar
+                                </a>
+                            </MagneticButton>
+                        </motion.div>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section
+                variants={VARIANTS_SECTION}
+                transition={TRANSITION_SECTION}
+                className="relative -mt-16"
+            >
+                <div className="relative rounded-3xl bg-gradient-to-br from-green-50 to-emerald-100 p-6 shadow-xl ring-1 ring-green-200/50 dark:from-green-950/30 dark:to-emerald-950/30 dark:ring-green-800/30">
+                    <div className="space-y-4">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
+                        >
+                            Become a general member
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg text-gray-700 dark:text-gray-300"
+                        >
+                            Complete the simple steps in this form to become a member of the Northwestern AI Club! By joining our communication channels, you will be kept up to date with the latest opportunities in AI as well as events that we're hosting.
+                        </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <MagneticButton asChild>
+                                <a
+                                    href="https://forms.gle/2TqufSseRiDFiqUu9"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Join Now
                                 </a>
                             </MagneticButton>
                         </motion.div>
@@ -214,7 +256,7 @@ export default function Home() {
                             transition={{ delay: 0.4 }}
                             className="space-y-4"
                         >
-                            <MagneticButton asChild size="lg">
+                            <MagneticButton asChild>
                                 <a
                                     href="https://docs.google.com/forms/d/e/1FAIpQLScTtuPiGqG7Z1Uc5o1mZVqEX7Zq_x-tTljKIT0SDTE-MAEKAw/viewform?usp=sharing&ouid=113293324627676648343"
                                     target="_blank"
