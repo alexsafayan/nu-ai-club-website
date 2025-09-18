@@ -335,7 +335,7 @@ export default function Home() {
                         <div className="flex">
                             <MagneticButton asChild>
                                 <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLSeo3i0SPp0g1f4R6-QM7Bb6Tjc6GVQLspG1MzUXIn3fx0s4Kw/viewform?usp=sharing&ouid=113293324627676648343"
+                                    href="https://forms.gle/2TqufSseRiDFiqUu9"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
